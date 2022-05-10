@@ -10,30 +10,30 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xfff0f8ea),
+        backgroundColor: const Color(0xfff0f8ea),
         body: ListView(
-          padding: EdgeInsets.all(17),
+          padding: const EdgeInsets.all(17),
           children: [
-            SizedBox(
+            const SizedBox(
               height: 90,
             ),
-            Text(
+            const Text(
               "Antrian Dokter Praktek Palaran",
               style: TextStyle(
                   fontFamily: "PoppinsBold",
                   fontSize: 24,
                   color: Color(0xff333333)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             RichText(
-              text: TextSpan(
+              text: const TextSpan(
                 style: TextStyle(
                     fontFamily: "PoppinsRegular",
                     fontSize: 13,
                     color: Color(0xff333333)),
-                children: const <TextSpan>[
+                children: <TextSpan>[
                   TextSpan(
                       text:
                           "Booking antrian sekarang lebih mudah melalui handphone."),
@@ -44,7 +44,7 @@ class LandingPage extends StatelessWidget {
               ),
               textAlign: TextAlign.left,
             ),
-            SizedBox(
+            const SizedBox(
               height: 21,
             ),
             Container(
@@ -58,17 +58,17 @@ class LandingPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                         maximumSize: const Size(171, 47),
                         minimumSize: const Size(171, 47),
-                        primary: Color(0xfff0f66e),
+                        primary: const Color(0xfff0f66e),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15))),
-                    child: Text(
+                    child: const Text(
                       "Lihat Dokter",
                       style: TextStyle(
                         color: Color(0xff333333),
                         fontSize: 13,
                       ),
                     ))),
-            SizedBox(height: 21),
+            const SizedBox(height: 21),
             Container(
               alignment: Alignment.topRight,
               width: MediaQuery.of(context).size.width,
@@ -79,4 +79,3 @@ class LandingPage extends StatelessWidget {
         ));
   }
 }
-

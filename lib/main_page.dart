@@ -8,22 +8,22 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xfff0f8ea),
+        backgroundColor: const Color(0xfff0f8ea),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xff333333)),
+          iconTheme: const IconThemeData(color: Color(0xff333333)),
         ),
         drawer: Drawer(
           child: ListView(children: [
-            DrawerHeader(
+            const DrawerHeader(
                 child: ListTile(
               leading: Icon(Icons.person),
               title: Text("Vauwez Sam El Fareez"),
             )),
             ListTile(
-              title: Text("Keluar"),
-              leading: Icon(Icons.logout),
+              title: const Text("Keluar"),
+              leading: const Icon(Icons.logout),
               onTap: () {
                 Navigator.pushReplacementNamed(context, '/');
               },
@@ -31,37 +31,37 @@ class MainPage extends StatelessWidget {
           ]),
         ),
         body: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 17),
+          padding: const EdgeInsets.symmetric(horizontal: 17),
           children: [
-            Text(
+            const Text(
               "Halo, Vauwez Sam El Fareez",
               style: TextStyle(fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
-            Text(
+            const Text(
               "Temukan Doktermu",
               style: TextStyle(fontSize: 27),
             ),
-            SizedBox(
+            const SizedBox(
               height: 27,
             ),
             TextField(
               decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(vertical: 15),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 15),
                   fillColor: Colors.white,
                   filled: true,
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15)),
-                  disabledBorder: OutlineInputBorder(
+                  disabledBorder: const OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Color(0xffa8c686), width: 1)),
                   hintText: "Cari dokter",
-                  hintStyle: TextStyle(fontFamily: "PoppinsRegular"),
-                  prefixIcon: Icon(Icons.search)),
+                  hintStyle: const TextStyle(fontFamily: "PoppinsRegular"),
+                  prefixIcon: const Icon(Icons.search)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             Row(
@@ -69,15 +69,15 @@ class MainPage extends StatelessWidget {
               children: [
                 Expanded(
                     child: Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(right: 6),
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.only(right: 6),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Color(0xffa8c686)),
+                      color: const Color(0xffa8c686)),
                   height: 90,
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Icon(
                           Icons.medication,
                           color: Colors.white,
@@ -91,15 +91,15 @@ class MainPage extends StatelessWidget {
                 )),
                 Expanded(
                     child: Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(left: 6),
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.only(left: 6),
                   decoration: BoxDecoration(
-                      color: Color(0xff9d9c62),
+                      color: const Color(0xff9d9c62),
                       borderRadius: BorderRadius.circular(15)),
                   height: 90,
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Icon(
                           Icons.health_and_safety,
                           color: Colors.white,
@@ -113,31 +113,32 @@ class MainPage extends StatelessWidget {
                 )),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 31,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Dokter Teramai",
                   style: TextStyle(fontSize: 20),
                 ),
                 TextButton(
                   style: TextButton.styleFrom(
-                      primary: Color(0xffe4572e),
-                      textStyle: TextStyle(
+                      primary: const Color(0xffe4572e),
+                      textStyle: const TextStyle(
                           fontFamily: "PoppinsSemiBold", fontSize: 10)),
                   onPressed: () {},
-                  child: Text("Lihat semua"),
+                  child: const Text("Lihat semua"),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 28,
             ),
             Container(
-                padding: EdgeInsets.symmetric(vertical: 7, horizontal: 13),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 7, horizontal: 13),
                 alignment: Alignment.center,
                 height: 91,
                 decoration: BoxDecoration(
@@ -148,24 +149,24 @@ class MainPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(600),
                     child: Image.asset("assets/doctor_strange.jpg"),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 14,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
+                      const Text(
                         "Doctor Strange",
                         style: TextStyle(fontSize: 15),
                       ),
-                      Text(
+                      const Text(
                         "177A Bleecker Street",
                         style: TextStyle(
                             fontSize: 10, fontFamily: "PoppinsRegular"),
                       ),
                       Row(
-                        children: [
+                        children: const [
                           Icon(Icons.timer, size: 16, color: Color(0xffa8c686)),
                           Text(
                             "07.00 - Selesai",
@@ -176,29 +177,30 @@ class MainPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/form');
                       // Navigator.push(context,
                       //     MaterialPageRoute(builder: (_) => FormPage()));
                     },
+                    style: ElevatedButton.styleFrom(
+                        //maximumSize: Size(86, 15),
+                        // minimumSize: Size(86, 15),
+                        primary: const Color(0xfff0f66e),
+                        textStyle: const TextStyle(fontSize: 10)),
                     child: Text(
                       "Antri",
                       style: TextStyle(color: Color(0xff333333)),
                     ),
-                    style: ElevatedButton.styleFrom(
-                        //maximumSize: Size(86, 15),
-                        // minimumSize: Size(86, 15),
-                        primary: Color(0xfff0f66e),
-                        textStyle: TextStyle(fontSize: 10)),
                   )
                 ])),
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
             Container(
-                padding: EdgeInsets.symmetric(vertical: 7, horizontal: 13),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 7, horizontal: 13),
                 alignment: Alignment.center,
                 height: 91,
                 decoration: BoxDecoration(
@@ -209,25 +211,25 @@ class MainPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(600),
                     child: Image.asset("assets/doc_brown.jpg"),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 14,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
+                      const Text(
                         "Doctor Emmet Brown",
                         style: TextStyle(fontSize: 15),
                       ),
-                      Text(
+                      const Text(
                         "535 North Victory Boulevard",
                         overflow: TextOverflow.fade,
                         style: TextStyle(
                             fontSize: 10, fontFamily: "PoppinsRegular"),
                       ),
                       Row(
-                        children: [
+                        children: const [
                           Icon(Icons.timer, size: 16, color: Color(0xffa8c686)),
                           Text(
                             "08.00 - Selesai",
@@ -238,27 +240,28 @@ class MainPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/form');
                     },
-                    child: Text(
-                      "Antri",
-                      style: TextStyle(color: Color(0xff333333)),
-                    ),
                     style: ElevatedButton.styleFrom(
                         //maximumSize: Size(86, 15),
                         // minimumSize: Size(86, 15),
-                        primary: Color(0xfff0f66e),
-                        textStyle: TextStyle(fontSize: 10)),
+                        primary: const Color(0xfff0f66e),
+                        textStyle: const TextStyle(fontSize: 10)),
+                    child: const Text(
+                      "Antri",
+                      style: TextStyle(color: Color(0xff333333)),
+                    ),
                   )
                 ])),
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
             Container(
-                padding: EdgeInsets.symmetric(vertical: 7, horizontal: 13),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 7, horizontal: 13),
                 alignment: Alignment.center,
                 height: 91,
                 decoration: BoxDecoration(
@@ -269,24 +272,24 @@ class MainPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(600),
                     child: Image.asset("assets/dr_john_watson.jpg"),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 14,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
+                      const Text(
                         "dr. John Watson",
                         style: TextStyle(fontSize: 15),
                       ),
-                      Text(
+                      const Text(
                         "221B Baker Street",
                         style: TextStyle(
                             fontSize: 10, fontFamily: "PoppinsRegular"),
                       ),
                       Row(
-                        children: [
+                        children: const [
                           Icon(Icons.timer, size: 16, color: Color(0xffa8c686)),
                           Text(
                             "15.00 - 21.00",
@@ -297,24 +300,23 @@ class MainPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/form');
                     },
-                    child: Text(
-                      "Antri",
-                      style: TextStyle(color: Color(0xff333333)),
-                    ),
                     style: ElevatedButton.styleFrom(
                         //maximumSize: Size(86, 15),
                         // minimumSize: Size(86, 15),
-                        primary: Color(0xfff0f66e),
-                        textStyle: TextStyle(fontSize: 10)),
+                        primary: const Color(0xfff0f66e),
+                        textStyle: const TextStyle(fontSize: 10)),
+                    child: const Text(
+                      "Antri",
+                      style: TextStyle(color: Color(0xff333333)),
+                    ),
                   )
                 ])),
           ],
         ));
   }
 }
-

@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           textTheme: Theme.of(context).textTheme.apply(
-              bodyColor: Color(0xff333333),
-              displayColor: Color(0xff333333),
+              bodyColor: const Color(0xff333333),
+              displayColor: const Color(0xff333333),
               fontFamily: "PoppinsSemiBold")),
       initialRoute: '/',
       routes: {
@@ -29,4 +29,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
