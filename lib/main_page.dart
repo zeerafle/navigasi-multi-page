@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'form_page.dart';
-import 'landing_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -68,13 +66,12 @@ class MainPage extends StatelessWidget {
               // crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Expanded(
-                    child: Container(
-                  padding: const EdgeInsets.all(10),
+                    child: Card(
+                  color: Color(0xffa8c686),
                   margin: const EdgeInsets.only(right: 6),
-                  decoration: BoxDecoration(
+                  shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      color: const Color(0xffa8c686)),
-                  height: 90,
+                      borderSide: BorderSide(color: Color(0xffa8c686))),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
@@ -90,13 +87,12 @@ class MainPage extends StatelessWidget {
                       ]),
                 )),
                 Expanded(
-                    child: Container(
-                  padding: const EdgeInsets.all(10),
+                    child: Card(
+                  color: const Color(0xff9d9c62),
                   margin: const EdgeInsets.only(left: 6),
-                  decoration: BoxDecoration(
-                      color: const Color(0xff9d9c62),
-                      borderRadius: BorderRadius.circular(15)),
-                  height: 90,
+                  shape: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Color(0xff9d9c62))),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [

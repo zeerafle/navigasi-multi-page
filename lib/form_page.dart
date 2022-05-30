@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 Widget inputText(String label, String hint, TextEditingController controller) {
@@ -143,6 +141,17 @@ class _FormPageState extends State<FormPage> {
                   bpjs = bpjsController.text;
                   alergiObat = alergiObatController.text;
                   keluhan = keluhanController.text;
+
+                  const mySnackBar = SnackBar(
+                      content: Text("Antrian di booking!",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontFamily: "PoppinsBold")),
+                      duration: Duration(seconds: 3),
+                      padding: EdgeInsets.all(10),
+                      backgroundColor: Color(0xffe4572e));
+                  ScaffoldMessenger.of(context).showSnackBar(mySnackBar);
                 });
               },
               style: ElevatedButton.styleFrom(
@@ -176,4 +185,3 @@ class _FormPageState extends State<FormPage> {
     );
   }
 }
-
