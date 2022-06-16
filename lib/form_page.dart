@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:two_way_navigation/controller.dart';
 
 Widget inputText(String label, String hint, TextEditingController controller) {
   return Container(
@@ -21,57 +24,29 @@ Widget inputText(String label, String hint, TextEditingController controller) {
   );
 }
 
-class FormPage extends StatefulWidget {
-  const FormPage({Key? key}) : super(key: key);
-
-  @override
-  State<FormPage> createState() => _FormPageState();
-}
-
-class _FormPageState extends State<FormPage> {
-  var nama = "",
-      umur = "",
-      alamat = "",
-      bpjs = "",
-      alergiObat = "",
-      keluhan = "";
-
-  TextEditingController namaController = TextEditingController();
-  TextEditingController umurController = TextEditingController();
-  TextEditingController alamatController = TextEditingController();
-  TextEditingController bpjsController = TextEditingController();
-  TextEditingController alergiObatController = TextEditingController();
-  TextEditingController keluhanController = TextEditingController();
+class FormPage extends StatelessWidget {
+  FormPage({Key? key}) : super(key: key);
+  final GetxTextController tc = Get.put(GetxTextController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff0f8ea),
+      backgroundColor: const Color(0xfff0f8ea),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: IconThemeData(color: Color(0xff333333)),
+        iconTheme: const IconThemeData(color: Color(0xff333333)),
       ),
-      body: ListView(padding: EdgeInsets.all(17), children: [
+      body: ListView(padding: const EdgeInsets.all(17), children: [
         const SizedBox(
           height: 30,
         ),
         Text(
-          "Halo, $nama",
+          "Halo, ${tc.nama.value}",
           style: const TextStyle(
             fontSize: 13,
           ),
         ),
-        if (nama != "")
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Text(
-              "$umur tahun - $alamat - $bpjs\nAlergi pada $alergiObat - $keluhan",
-              style: const TextStyle(
-                fontSize: 13,
-              ),
-            ),
-          ),
         const Text("Silahkan tunggu giliran Anda",
             style: TextStyle(
               fontSize: 20,
@@ -119,13 +94,13 @@ class _FormPageState extends State<FormPage> {
         const SizedBox(
           height: 15,
         ),
-        inputText("Nama", "Nama lengkap", namaController),
-        inputText("Umur", "25", umurController),
-        inputText("Alamat", "Jl. Kedamaian, No. 28", alamatController),
-        inputText("Nomor BPJS", "00320021", bpjsController),
-        inputText("Alergi Jenis Obat", "sulva", alergiObatController),
+        inputText("Nama", "Nama lengkap", tc.namaController),
+        inputText("Umur", "25", tc.umurController),
+        inputText("Alamat", "Jl. Kedamaian, No. 28", tc.alamatController),
+        inputText("Nomor BPJS", "00320021", tc.bpjsController),
+        inputText("Alergi Jenis Obat", "sulva", tc.alergiObatController),
         inputText("Keluhan", "demam, batuk, pilek selama tiga hari",
-            keluhanController),
+            tc.keluhanController),
         const SizedBox(
           height: 27 - 9,
         ),
@@ -134,29 +109,47 @@ class _FormPageState extends State<FormPage> {
           children: [
             ElevatedButton(
               onPressed: () {
-                setState(() {
-                  nama = namaController.text;
-                  umur = umurController.text;
-                  alamat = alamatController.text;
-                  bpjs = bpjsController.text;
-                  alergiObat = alergiObatController.text;
-                  keluhan = keluhanController.text;
+                tc.nama.value = tc.namaController.text;
+                tc.umur.value = tc.umurController.text;
+                tc.alamat.value = tc.alamatController.text;
+                tc.bpjs.value = tc.bpjsController.text;
+                tc.alergiObat.value = tc.alergiObatController.text;
+                tc.keluhan.value = tc.keluhanController.text;
 
-                  const mySnackBar = SnackBar(
-                      content: Text("Antrian di booking!",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontFamily: "PoppinsBold")),
-                      duration: Duration(seconds: 3),
-                      padding: EdgeInsets.all(10),
-                      backgroundColor: Color(0xffe4572e));
-                  ScaffoldMessenger.of(context).showSnackBar(mySnackBar);
+                // ADD DATA
+                FirebaseFirestore.instance.collection("booking").add({
+                  "nama": tc.nama.value,
+                  "umur": tc.umur.value,
+                  "alamat": tc.alamat.value,
+                  "bpjs": tc.bpjs.value,
+                  "alergiObat": tc.alergiObat.value,
+                  "keluhan": tc.keluhan.value,
                 });
+
+                // kosongkan controller
+                tc.namaController.text = "";
+                tc.umurController.text = "";
+                tc.alamatController.text = "";
+                tc.bpjsController.text = "";
+                tc.alergiObatController.text = "";
+                tc.keluhanController.text = "";
+
+                const mySnackBar = SnackBar(
+                    content: Text("Antrian di booking!",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontFamily: "PoppinsBold")),
+                    duration: Duration(seconds: 3),
+                    padding: EdgeInsets.all(10),
+                    backgroundColor: Color(0xffe4572e));
+                ScaffoldMessenger.of(context).showSnackBar(mySnackBar);
+
+                Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(290, 55),
-                primary: Color(0xfff0f66e),
+                primary: const Color(0xfff0f66e),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
               ),
@@ -170,11 +163,11 @@ class _FormPageState extends State<FormPage> {
                 Navigator.pop(context);
               },
               style: OutlinedButton.styleFrom(
-                  minimumSize: Size(55, 55),
+                  minimumSize: const Size(55, 55),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
-                  primary: Color(0xff9d9c62)),
-              child: Text(
+                  primary: const Color(0xff9d9c62)),
+              child: const Text(
                 'Batal',
                 style: TextStyle(fontFamily: 'PoppinsRegular'),
               ),

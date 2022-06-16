@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 // import 'main_page.dart';
 
 class LandingPage extends StatelessWidget {

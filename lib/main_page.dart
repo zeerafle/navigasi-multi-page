@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:two_way_navigation/drawer.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -12,22 +13,7 @@ class MainPage extends StatelessWidget {
           elevation: 0,
           iconTheme: const IconThemeData(color: Color(0xff333333)),
         ),
-        drawer: Drawer(
-          child: ListView(children: [
-            const DrawerHeader(
-                child: ListTile(
-              leading: Icon(Icons.person),
-              title: Text("Vauwez Sam El Fareez"),
-            )),
-            ListTile(
-              title: const Text("Keluar"),
-              leading: const Icon(Icons.logout),
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/');
-              },
-            )
-          ]),
-        ),
+        drawer: const MyDrawer(),
         body: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 17),
           children: [
@@ -67,11 +53,11 @@ class MainPage extends StatelessWidget {
               children: [
                 Expanded(
                     child: Card(
-                  color: Color(0xffa8c686),
+                  color: const Color(0xffa8c686),
                   margin: const EdgeInsets.only(right: 6),
                   shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide(color: Color(0xffa8c686))),
+                      borderSide: const BorderSide(color: Color(0xffa8c686))),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
@@ -92,7 +78,7 @@ class MainPage extends StatelessWidget {
                   margin: const EdgeInsets.only(left: 6),
                   shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide(color: Color(0xff9d9c62))),
+                      borderSide: const BorderSide(color: Color(0xff9d9c62))),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
@@ -177,15 +163,13 @@ class MainPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/form');
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (_) => FormPage()));
                     },
                     style: ElevatedButton.styleFrom(
                         //maximumSize: Size(86, 15),
                         // minimumSize: Size(86, 15),
                         primary: const Color(0xfff0f66e),
                         textStyle: const TextStyle(fontSize: 10)),
-                    child: Text(
+                    child: const Text(
                       "Antri",
                       style: TextStyle(color: Color(0xff333333)),
                     ),

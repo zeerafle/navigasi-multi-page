@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "940295795446",
+    "project_id": "booking-antrian-dokter",
+    "storage_bucket": "booking-antrian-dokter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940295795446:android:574335309abda2d8b432d7",
+        "android_client_info": {
+          "package_name": "com.example.postest7_2009106054_vauwez"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940295795446-be8k9ap3eabkno836vseqj3fe7379bnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtUH7zBwEPUNmoyvWbXSfnVA0a_KLLeLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940295795446-be8k9ap3eabkno836vseqj3fe7379bnv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940295795446:android:066f7be49aae2d61b432d7",
+        "android_client_info": {
+          "package_name": "com.example.two_way_navigation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940295795446-be8k9ap3eabkno836vseqj3fe7379bnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtUH7zBwEPUNmoyvWbXSfnVA0a_KLLeLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940295795446-be8k9ap3eabkno836vseqj3fe7379bnv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
