@@ -71,7 +71,7 @@ List view diterapkan di semua halaman. Contoh di halaman utama.
 
 Card view digunakan di halaman utama untuk membuat kartu klinik dan dokter umum.
 
-![](https://raw.githubusercontent.com/zeerafle/two-way-navigation/blob/master/screenshot/cardview.png)
+![](https://raw.githubusercontent.com/zeerafle/navigasi-multi-page/master/screenshot/cardview.png)
 
 ```dart
             Row(
@@ -127,7 +127,7 @@ Card view digunakan di halaman utama untuk membuat kartu klinik dan dokter umum.
 
 Snackbar digunakan sebagai pesan notifikasi bahwa antrian berhasil dibooking.
 
-![](https://raw.githubusercontent.com/zeerafle/two-way-navigation/blob/master/screenshot/snackbar.png)
+![](https://raw.githubusercontent.com/zeerafle/navigasi-multi-page/master/screenshot/snackbar.png)
 
 ```dart
                 const mySnackBar = SnackBar(
@@ -150,7 +150,7 @@ API yang digunakan API dari [Firebase](https://firebase.google.com/)
 
 Mengambil data antrian yang sudah dibooking. Data ini ditampilkan pada halaman daftar booking antrian.
 
-![](https://raw.githubusercontent.com/zeerafle/two-way-navigation/blob/master/screenshot/booking_page.png)
+![](https://raw.githubusercontent.com/zeerafle/navigasi-multi-page/master/screenshot/booking_page.png)
 
 ```dart
   ...
@@ -186,7 +186,7 @@ Mengambil data antrian yang sudah dibooking. Data ini ditampilkan pada halaman d
 
 Proses tambah data terjadi saat menekan tombol antri sekarang pada halaman form
 
-![](https://raw.githubusercontent.com/zeerafle/two-way-navigation/blob/master/screenshot/form_page.png)
+![](https://raw.githubusercontent.com/zeerafle/navigasi-multi-page/master/screenshot/form_page.png)
 
 ```dart
                 ...
@@ -206,7 +206,7 @@ Proses tambah data terjadi saat menekan tombol antri sekarang pada halaman form
 
 Proses perbarui data ada di halaman detail booking. Halaman detail booking didapat dari menekan salah satu dari daftar antrian terbooking di halaman daftar booking antrian
 
-![](https://raw.githubusercontent.com/zeerafle/two-way-navigation/blob/master/screenshot/rincian_booking.png)
+![](https://raw.githubusercontent.com/zeerafle/navigasi-multi-page/master/screenshot/rincian_booking.png)
 
 ```dart
     FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -229,9 +229,9 @@ Proses perbarui data ada di halaman detail booking. Halaman detail booking didap
 
 Proses hapus data ada dihalaman daftar booking antrian dengan menekan tombol icon batalkan pada salah satu container antrian terbooking
 
-![](https://raw.githubusercontent.com/zeerafle/two-way-navigation/blob/master/screenshot/cancel_button.png)
+![](https://raw.githubusercontent.com/zeerafle/navigasi-multi-page/master/screenshot/cancel_button.png)
 
-![](https://raw.githubusercontent.com/zeerafle/two-way-navigation/blob/master/screenshot/booking_page_delete_entry.png)
+![](https://raw.githubusercontent.com/zeerafle/navigasi-multi-page/master/screenshot/booking_page_delete_entry.png)
 
 ```dart
                 ...
