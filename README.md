@@ -4,6 +4,16 @@ NIM : 2009106054
 
 Tugas UAS mata kuliah pemrograman mobile
 
+# Badge Bootcamp Belajar Android
+
+| Bahasan | Badge |
+| --- | --- |
+| [Introduction to Kotlin](https://developers.google.com/profile/badges/playlists/android/android-basics-kotlin-pathway-one) | ![](https://raw.githubusercontent.com/zeerafle/navigasi-multi-page/master/screenshot/introduction_to_kotlin.png) |
+| [First App in Android Studio](https://developers.google.com/profile/badges/playlists/android/android-basics-kotlin-pathway-two) | ![](https://raw.githubusercontent.com/zeerafle/navigasi-multi-page/master/screenshot/first_app_in_android_studio.png) |
+| [Build a Basic Layout](https://developers.google.com/profile/badges/playlists/android/android-basics-kotlin-pathway-three) | ![](https://raw.githubusercontent.com/zeerafle/navigasi-multi-page/master/screenshot/build_a_basic_layout.png) |
+
+# Tugas
+
 ## Navigasi
 
 `main.dart`
